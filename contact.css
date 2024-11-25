@@ -13,8 +13,9 @@ body {
     overflow-x: hidden;
 }
 
+/* Header */
 header {
-    background-color: #00c5ff;
+    background-color: white;
     color: black;
     padding: 20px 10px;
     animation: slideDown 1s ease-out;
@@ -42,7 +43,7 @@ h1 {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Boutons */
+/* Navigation Buttons */
 nav {
     display: flex;
     gap: 10px;
@@ -160,10 +161,11 @@ nav {
 /* Section Contact */
 .contact {
     text-align: center;
-    padding: 20px;
+    padding: 40px;
     background-color: #00c5ff;
     color: white;
     animation: fadeInUp 2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contact h2 {
@@ -176,8 +178,52 @@ nav {
     font-size: 1.2rem;
 }
 
-.contact .btn {
-    animation: pulse 2s infinite ease-in-out;
+.contact form {
+    margin-top: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact .form-group {
+    margin-bottom: 20px;
+}
+
+.contact label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.contact textarea {
+    resize: vertical;
+}
+
+.contact button {
+    padding: 12px 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #ff9800;
+    transform: scale(1.05);
 }
 
 /* Pied de page */
@@ -281,5 +327,10 @@ footer {
 
     .btn {
         width: 100%;
+    }
+
+    .contact form {
+        width: 100%;
+        padding: 0 15px;
     }
 }

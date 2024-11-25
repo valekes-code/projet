@@ -24,7 +24,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Light background to cover the page */
+    background-color: rgba(255, 255, 255, 0.8);
     z-index: 9999;
     animation: fadeIn 0.5s ease-out, hideLoader 5s forwards;
 }
@@ -32,7 +32,7 @@ body {
 /* Spinner animation */
 .spinner {
     border: 6px solid #f3f3f3;  /* Light grey background */
-    border-top: 6px solid #00c5ff;  /* Original blue for the spinning part */
+    border-top: 6px solid #00c5ff;  /* Blue color for the spinning part */
     border-radius: 50%;
     width: 70px;
     height: 70px;
@@ -69,9 +69,14 @@ body {
     }
 }
 
+/* When body is loaded, hide the loader */
+body.loaded #loader {
+    display: none;
+}
+
 /* Styles for header */
 header {
-    background-color: #00c5ff;  /* Original blue */
+    background-color: #00c5ff;
     color: black;
     padding: 20px 10px;
     animation: slideDown 1s ease-out;
@@ -97,29 +102,6 @@ h1 {
     flex: 1;
     text-align: center;
     animation: fadeIn 1s ease-in-out;
-}
-
-/* Nav buttons (Header) */
-nav {
-    display: flex;
-    gap: 10px;
-}
-
-.btn {
-    background-color: orange;  /* Orange buttons for the header */
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    animation: pulse 2s infinite ease-in-out;
-}
-
-.btn:hover {
-    background-color: #ff9800;  /* Darker orange for hover effect */
-    transform: scale(1.1);
 }
 
 /* Main sections */
@@ -165,7 +147,22 @@ nav {
     transform: scale(1.05);
 }
 
-/* Footer */
+.btn {
+    background-color: #00c5ff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #008CBA;
+}
+
+/* Pied de page */
 footer {
     text-align: center;
     padding: 10px;

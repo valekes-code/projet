@@ -109,10 +109,9 @@ h1 {
     animation: fadeIn 1s ease-in-out;
 }
 
-
 nav {
-    display: flex;
-    gap: 10px;
+    flex-direction: row; /* Les boutons seront côte à côte sur les écrans larges */
+    justify-content: space-between; /* Espace entre les boutons */
 }
 
 .btn {
@@ -255,6 +254,7 @@ footer {
     .container {
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
 
     .logo {
@@ -262,13 +262,9 @@ footer {
     }
 
     nav {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .btn {
-        width: 100%;
-        padding: 12px 0;
+        width: auto; /* Le conteneur nav occupe 100% de la largeur */
+        display: flex; 
+        gap: 10px; /* Ajoute un espace entre les boutons */
     }
 
     .intro h2, .features h2, .contact h2 {

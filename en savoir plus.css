@@ -12,9 +12,11 @@ body {
     color: #333;
     overflow-x: hidden;
     background-color: #f9f9f9;
+    visibility: hidden; 
+    animation: fadeInBody 0.5s ease-in-out forwards; 
 }
 
-/* Loading Spinner */
+
 #loader {
     position: fixed;
     top: 0;
@@ -24,15 +26,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Light background to cover the page */
+    background-color: black;
     z-index: 9999;
-    animation: fadeIn 0.5s ease-out, hideLoader 5s forwards;
+    animation: fadeIn 0.5s ease-out, hideLoader 3s forwards; 
 }
 
-/* Spinner animation */
 .spinner {
-    border: 6px solid #f3f3f3;  /* Light grey background */
-    border-top: 6px solid #00c5ff;  /* Original blue for the spinning part */
+    border: 6px solid #f3f3f3;  
+    border-top: 6px solid #00c5ff;  
     border-radius: 50%;
     width: 70px;
     height: 70px;
@@ -48,7 +49,7 @@ body {
     }
 }
 
-/* Hide loader after 5 seconds */
+
 @keyframes hideLoader {
     0% {
         opacity: 1;
@@ -59,7 +60,7 @@ body {
     }
 }
 
-/* Fade effect for loader */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -69,9 +70,18 @@ body {
     }
 }
 
-/* Styles for header */
+
+@keyframes fadeInBody {
+    from {
+        visibility: hidden;
+    }
+    to {
+        visibility: visible;
+    }
+}
+
 header {
-    background-color: #00c5ff;  /* Original blue */
+    background-color: #00c5ff;  
     color: black;
     padding: 20px 10px;
     animation: slideDown 1s ease-out;
@@ -99,29 +109,27 @@ h1 {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Nav buttons (Header) */
+
 nav {
     display: flex;
     gap: 10px;
 }
 
 .btn {
-    background-color: orange;  /* Orange buttons for the header */
-    color: white;
-    padding: 10px 15px;
+    background-color: orange;
     border: none;
+    padding: 10px 15px;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    animation: pulse 2s infinite ease-in-out;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #ff9800;  /* Darker orange for hover effect */
+    background-color: #ff9800;
     transform: scale(1.1);
 }
-
 /* Main sections */
 .intro, .features, .contact {
     text-align: center;
@@ -186,13 +194,135 @@ footer {
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
-    .feature-list {
+
+/* Small Devices (Mobile) */
+@media screen and (max-width: 480px) {
+    header {
+        text-align: center;
+    }
+
+    .container {
         flex-direction: column;
         align-items: center;
     }
 
+    h1 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
     .btn {
         width: 100%;
+        padding: 12px 0;
+    }
+
+    .intro h2, .features h2, .contact h2 {
+        font-size: 1.6rem;
+    }
+
+    .intro p, .contact p {
+        font-size: 1rem;
+    }
+
+    .feature-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .feature-item {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Medium Devices (Tablets and small laptops) */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        height: 70px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .intro h2, .features h2, .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro p, .contact p {
+        font-size: 1.1rem;
+    }
+
+    .feature-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .feature-item {
+        max-width: 90%;
+    }
+}
+
+/* Large Devices (Desktop and larger laptops) */
+@media screen and (min-width: 1024px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .logo {
+        height: 80px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .feature-item {
+        max-width: 30%;
+    }
+}
+
+/* Extra Large Devices */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .feature-item {
+        max-width: 30%;
+    }
+
+    h1 {
+        font-size: 2.2rem;
     }
 }
